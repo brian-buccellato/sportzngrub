@@ -6,15 +6,12 @@
 		<div>
 			<h1><a href="">Brian's Boring Blog</a></h1>
 		</div>
-		<div>
-			<p>Published: 2-10-2017 5:27PM</p>
-			<h2><a href="">My First Post</a></h2>
-			<p>Placeholding post.  Very boring.</p>
-		</div>
-		<div>
-			<p>Published: 2-10-2017 5:27PM</p>
-			<h2><a href="">My Second Post</a></h2>
-			<p>Second placeholding post.  Possibly even more boring than the first.</p>
-		</div>
+		{% for post in posts %}
+			<div>
+				<p>Published: {{ post.published_date }}</p>
+				<h1><a href="">{{ post.title }}</a></h1>
+				<p>{{ post.text | linebreaksbr }}</p>
+			</div>
+		{% endfor %}
 	</body>
 </html>
