@@ -8,8 +8,13 @@
 	</head>
 	<body>
 		<div class="page-header">
-			<h1><a href="">Brian's Boring Blog</a></h1>
-			</div>
+			<h1>
+				<a href="{% url 'post_list' %}">Brian's Boring Blog</a>
+				{% if user.is_authenticated %}
+					<a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+				{% endif %}
+			</h1>
+		</div>
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-8">
