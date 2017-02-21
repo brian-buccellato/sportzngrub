@@ -1,11 +1,24 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
-from .models import Post
+from .models import Post, Page
+from .forms import PageForm
 from .forms import PostForm
 
 def post_list(request):
-    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
-    return render(request, 'blog/post_list.html', {'posts': posts})
+    page = Page.objects.filter(visited=False, memory=False)
+    print(page)
+    posts = Post.objects.filter(published_date__lte=timezone.now(), visited=False, memory=False).order_by('-published_date')
+    return render(request, 'blog/post_list.html', {'posts': posts, 'page': page})
+
+def dest_list(request):
+    page = Page.objects.filter(visited=True, memory=False)
+    posts = Post.objects.filter(published_date__lte=timezone.now(), visited=True).order_by('published_date')
+    return render(request, 'blog/post_list.html', {'posts': posts, 'page': page})
+
+def memory_list(request):
+    page = Page.objects.filter(visited=False, memory=True)
+    posts = Post.objects.filter(published_date__lte=timezone.now(), memory=True).order_by('-published_date')
+    return render(request, 'blog/post_list.html', {'posts': posts, 'page': page})
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
@@ -24,10 +37,21 @@ def post_new(request):
         form = PostForm()
     return render(request, 'blog/post_new.html', {'form': form})
 
+def page(request):
+    if request.method == "POST":
+        form = PageForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return render('blog/post_list.html', {})
+    else:
+        form = PageForm()
+    return render(request, 'blog/page_edit.html', {'form': form})    
+            
+
 def post_edit(request, pk):
     post = get_object_or_404(Post, pk=pk)
     if request.method == "POST":
-        form = PostForm(request.POST, instance=post)
+        form = PostForm(request.POST, request.FILES, instance=post)
         if form.is_valid():
             post = form.save(commit=False)
             post.author = request.user

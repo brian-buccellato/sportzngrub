@@ -11,6 +11,27 @@
 			<a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
 		{% endif %}
 		<h1>{{ post.title }}</h1>
-		<p>{{ post.text | linebreaksbr }}</p>
+		{% if post.detail_image %}
+			<div class="row">
+				<div class="col-md-6">
+					<p class="post-text">{{ post.post_text | linebreaksbr }}</p>
+				</div>
+				<div class="col-md-2"></div>
+				<div class="col-md-4">
+					<img class="detail-image" src="{{ post.detail_image.url }}">
+				</div>
+			</div>
+			{% if post.extra_img_one %}
+			<div class="row">
+				<div class="col-md-3">
+					<img class="extra-image" src="{{ post.extra_img_one.url }}">
+				</div>
+				<div class="col-md-3">
+					<img class="extra-image" src="{{ post.extra_img_two.url }}">
+				</div>
+				<div class="col-md-6"></div>
+			</div>
+			{% endif %}
+		{% endif %}
 	</div>
 {% endblock %}
