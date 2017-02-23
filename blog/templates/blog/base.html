@@ -1,7 +1,7 @@
 {% load staticfiles %}
 <html>
 <head>
-<title>Brian's Baseball Blog</title>
+<title>Sportz 'n Grub</title>
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 <link rel="stylesheet" href="{% static 'css/blog.css' %}">
@@ -10,7 +10,7 @@
 	<div class="page-header">
 		<div class="row">
 			<h1>
-				<a href="{% url 'post_list' %}">Brian's Baseball Blog</a> 
+				<a href="{% url 'post_list' %}">Sportz 'n Grub</a> 
 				{% if user.is_authenticated %} 
 					<a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus-sign"></span></a>
 					<a href="{% url 'edit_page' %}" class="top-menu"><span class="glyphicon glyphicon-font"></span></a>
