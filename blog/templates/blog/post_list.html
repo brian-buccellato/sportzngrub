@@ -3,9 +3,9 @@
 {% block content %}
 	<div class="row" style="padding-bottom: 2em; padding-top:2em;">
 		{% for p in page %}
-			<div class="col-xs-1"><img class="top-image" src="{{ p.top_image_left.url }}"></div>
-			<div class="col-xs-10" style="border-bottom: thin solid #4F628E"><p class="blurb-text">{{ p.main_text }}</p></div>
-			<div class="col-xs-1"><img class="top-image" src="{{ p.top_image_right.url }}"></div>
+			<div class="col-xs-2"><img class="img-responsive top-image" src="{{ p.top_image_left.url }}"></div>
+			<div class="col-xs-8" style="border-bottom: thin solid #4F628E"><p class="blurb-text">{{ p.main_text }}</p></div>
+			<div class="col-xs-2"><img class="img-responsive top-image" src="{{ p.top_image_right.url }}"></div>
 		{% endfor %}
 	</div>
 	{% for post in posts %}
@@ -16,15 +16,13 @@
 		<div class="date">
 			<p>Published: {{ post.published_date }}</p>
 		</div>
-		<!-- <p>{{ post.text | linebreaksbr }}</p> -->
 		<div class="row">
 			<div class="col-xs-8">
 				<p class="post-text">{{ post.text | linebreaksbr }}</p>
 			</div>
-			
 			{% if post.image %}
 				<div class="col-xs-4">
-					<img class="post-image" src="{{ post.image.url }}">
+					<img class="img-responsive post-image" src="{{ post.image.url }}">
 				</div>
 			{% endif %}
 		</div>

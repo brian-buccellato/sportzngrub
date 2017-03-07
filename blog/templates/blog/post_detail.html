@@ -13,11 +13,10 @@
 		{% endif %}
 		{% if post.detail_image %}
 			<div class="row">
-				<div class="col-xs-8">
-					<p class="post-text">{{ post.post_text | linebreaksbr }}</p>
-				</div>
-				<div class="col-xs-4">
-					<img class="detail-image" src="{{ post.detail_image.url }}">
+				<div class="col-xs-12">
+					<p class="post-text">
+						<img class="detail-image" src="{{ post.detail_image.url }}">{{ post.post_text | linebreaksbr }}
+					</p>
 				</div>
 			</div>
 			
@@ -25,13 +24,12 @@
 	</div>
 	{% if post.extra_img_one %}
 			<div class="row">
-				<div class="col-xs-3">
-					<img class="extra-image" src="{{ post.extra_img_one.url }}">
+				<div class="col-xs-6">
+					<img class="img-responsive post-image" src="{{ post.extra_img_one.url }}">
 				</div>
-				<div class="col-xs-3">
-					<img class="extra-image" src="{{ post.extra_img_two.url }}">
+				<div class="col-xs-6">
+					<img class="img-responsive post-image" src="{{ post.extra_img_two.url }}">
 				</div>
-				<div class="col-xs-6"></div>
 			</div>
 			{% endif %}
 {% endblock %}

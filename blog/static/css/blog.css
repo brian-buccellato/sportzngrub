@@ -2,6 +2,9 @@
     background-color: #162955;
     margin-top: 0;
     padding: 20px 20px 20px 40px;
+    margin: 1.0em 0em 1.0em 0em;
+    border-radius: 0px 0px 5px 5px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
 }
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
@@ -54,20 +57,27 @@ h1, h2, h3, h4 {
 
 .nav-links {
 	font-size: 24px;
-	/* padding-right: 2em; */
 	text-decoration: none;
 }
 
+body {
+	overflow-x: hidden;
+	height: 100%;
+}
+
+.nav-links:hover {
+	color: orange;
+}
+
 .post-image {
-	height: 150px;
-	width: 150px;
-	padding-bottom: 2em;
+	padding: 1em;
 }
 
 .detail-image {
 	height: 250px;
 	width: 250px;
-	padding-bottom: 2em;	
+	padding: 1em;
+	float: right;	
 }
 
 .extra-image {
@@ -76,18 +86,17 @@ h1, h2, h3, h4 {
 	padding: 2em;
 }
 
-.top-image {
-	height: 75px;
-	width: 75px;
-}
-
 .post-text {
 	font-size: 16px;
 	font-family: "Tahoma";
 }
 
+.top-image {
+	padding: 0.75em;
+}
+
 .blurb-text {
-	font-size: 18px;
+	font-size: 16px;
 	font-family: "Arial";
 	color: #162955;
 	padding-left: 1.5em;

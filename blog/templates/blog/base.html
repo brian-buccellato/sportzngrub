@@ -7,25 +7,36 @@
 <link rel="stylesheet" href="{% static 'css/blog.css' %}">
 </head>
 <body>
-	<div class="page-header">
-		<div class="row">
-			<h1>
-				<a href="{% url 'post_list' %}">Sportz N' Grub</a> 
-				{% if user.is_authenticated %} 
-					<a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus-sign"></span></a>
-					<a href="{% url 'edit_page' %}" class="top-menu"><span class="glyphicon glyphicon-font"></span></a>
-				{% endif %}
-			</h1>
+	<div class="row">
+		<div class="col-xs-2"></div>
+		<div class="col-xs-8 page-header">
+			<div class="row">
+				
+				<div class="col-xs-12 text-center">
+					<h1>
+						<a href="{% url 'post_list' %}">Sportz N' Grub</a> 
+						{% if user.is_authenticated %} 
+							<a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus-sign"></span></a>
+							<a href="{% url 'edit_page' %}" class="top-menu"><span class="glyphicon glyphicon-font"></span></a>
+						{% endif %}
+					</h1>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-2"></div>
+				<div class="col-xs-3 text-center"><a class="nav-links" href="{% url 'dest_list' %}">Destinations</a></div>
+				<div class="col-xs-2"></div>
+				<div class="col-xs-3 text-center"><a class="nav-links" href="{% url 'memory_list' %}">Memories</a></div>
+				<div class="col-xs-2"></div>
+			</div>
 		</div>
-		<div class="row">
-			<div class="col-xs-3"><a class="nav-links" href="{% url 'dest_list' %}">Top 3 Destinations</a></div>
-			<div class="col-xs-3"><a class="nav-links" href="{% url 'memory_list' %}">Great Baseball Memories</a></div>
-			<div class="col-xs-6"></div>
-		</div>
+		<div class="col-xs-2"></div>
 	</div>
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-xs-10">{% block content %} {% endblock %}</div>
+			<div class="col-xs-2"></div>
+			<div class="col-xs-8">{% block content %} {% endblock %}</div>
+			<div class="col-xs-2"></div>
 		</div>
 	</div>
 </body>
