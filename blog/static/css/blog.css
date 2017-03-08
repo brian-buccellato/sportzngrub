@@ -5,9 +5,9 @@
     background-color: #162955;
     margin-top: 0;
     padding: 20px 20px 20px 40px;
-    margin: 1.0em 0em 1.0em 0em;
+    margin: 1.0em 0em 1.75em 0em;
     border-radius: 5px 5px 5px 5px;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19); 
 }
 
 .content-border {
