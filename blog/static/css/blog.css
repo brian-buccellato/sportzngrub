@@ -1,10 +1,18 @@
+.container-fluid{
+	min-height:100%;
+}
 .page-header {
     background-color: #162955;
     margin-top: 0;
     padding: 20px 20px 20px 40px;
     margin: 1.0em 0em 1.0em 0em;
-    border-radius: 0px 0px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+.content-border {
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+	min-height: 100%
 }
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {

@@ -10,14 +10,14 @@
 	</div>
 	{% for post in posts %}
 	<div class="post">
-		<h1>
-			<a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a>
-		</h1>
-		<div class="date">
-			<p>Published: {{ post.published_date }}</p>
-		</div>
 		<div class="row">
 			<div class="col-xs-7">
+				<h1>
+					<a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a>
+				</h1>
+				<div class="date">
+					<p>Published: {{ post.published_date }}</p>
+				</div>
 				<p class="post-text">{{ post.text | linebreaksbr }}</p>
 			</div>
 			{% if post.image %}
